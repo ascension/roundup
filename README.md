@@ -94,7 +94,11 @@ Both accept `{ patterns?: string[]; allowPatterns?: string[] }`.
 
 Requires **Node.js ≥ 22.18** (Oxlint RuleTester / TS config).
 
+Use the Node.js version pinned in `.nvmrc` for local development.
+
 ```bash
+nvm install
+nvm use
 pnpm install
 pnpm check
 ```
