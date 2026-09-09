@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": ["skills/**"],
+  "jsPlugins": [{ "name": "roundup", "specifier": "./src/index.ts" }],
+  "rules": {
+    "roundup/no-weed-path": "error",
+    "roundup/no-weed-import": "error"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "oxlint-plugin-roundup",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Opinionated Oxlint rules for keeping your garden weed free \u2014 keep agent plans and design specs out of source.",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./check-paths": "./src/check-paths.ts"
+  },
+  "bin": {
+    "roundup-check": "./src/check-paths.ts"
+  },
+  "files": [
+    "src",
+    "skills"
+  ],
+  "scripts": {
+    "check": "pnpm lint && pnpm test && pnpm typecheck",
+    "lint": "NODE_OPTIONS='--import tsx' oxlint src",
+    "test": "tsx src/rules/no-weed-path.test.ts && tsx src/rules/no-weed-import.test.ts && tsx src/shared/weed-paths.test.ts && tsx src/check-paths.test.ts",
+    "typecheck": "tsc --noEmit",
+    "roundup:paths": "tsx src/check-paths.ts"
+  },
+  "dependencies": {
+    "@oxlint/plugins": "1.82.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.3.0",
+    "oxlint": "1.82.0",
+    "tsx": "4.20.5",
+    "typescript": "5.9.2"
+  },
+  "packageManager": "pnpm@10.15.0",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.18.0"
+  }
+}
